@@ -16,7 +16,7 @@ public class BrowserHelper extends GenericHelper{
 	 * openBrowser will lauch the browser based on the browser name we specified and
 	 * returns WebDriver object reference
 	 */
-	public WebDriver openBrowser(String browserName, String url) {
+	public WebDriver openBrowser(String browserName) {
 		if (System.getProperty("os.name").toLowerCase().contains("windows") && browserName.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", getPath("drivers", "chromedriver.exe"));
 			driver = new ChromeDriver();
@@ -34,7 +34,6 @@ public class BrowserHelper extends GenericHelper{
 		} else {
 			throw new RuntimeException("Invalid browser Name, Browser name must be either chrome or firefox");
 		}
-		driver.get(url);
 		driver.manage().window().maximize();
 		return driver;
 	}
