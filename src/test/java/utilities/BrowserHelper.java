@@ -7,17 +7,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class BrowserHelper {
+public class BrowserHelper extends GenericHelper{
 
 	WebDriver driver;
 
-	/*
-	 * method to retrieve the path of given file or folder in project root folder
-	 */
-	public String getPath(String folderName, String fileName) {
-		return System.getProperty("user.dir") + File.separator + folderName + File.separator + fileName;
-	}
-
+	
 	/*
 	 * openBrowser will lauch the browser based on the browser name we specified and
 	 * returns WebDriver object reference
