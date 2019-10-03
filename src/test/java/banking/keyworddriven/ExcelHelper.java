@@ -60,6 +60,12 @@ public class ExcelHelper extends GenericHelper {
 			int i = (int) cell.getNumericCellValue();
 			data = Integer.toString(i);
 			break;
+		case BLANK:
+			data = "";
+			break;
+		case _NONE:
+			data = "";
+			break;
 		default:
 			throw new RuntimeException("invalid cell type");
 		}
@@ -79,12 +85,16 @@ public class ExcelHelper extends GenericHelper {
 
 //	@Test
 //	public void testmethod() {
-//		openExcel("resources", "keywords.xlsx", "Sheet1");
+//		openExcel("resources", "keywords.xlsx", "teststeps");
 //		int nor = getRows();
 //		int noc = getColumns();
-//		for(int i = 0; i<=nor; i++) {
-//				System.out.print(readData(i, 0)+"\t");
-//				System.out.println(readData(i, 1));
+//		for (int i = 1; i <= nor; i++) {
+//			System.out.print(readData(i, 0) + "\t");
+//			System.out.print(readData(i, 1) + "\t");
+//			System.out.print(readData(i, 2) + "\t");
+//			System.out.print(readData(i, 3) + "\t");
+//			System.out.print(readData(i, 4) + "\t");
+//			System.out.println(readData(i, 5));
 //		}
 //		closeExcel();
 //	}
